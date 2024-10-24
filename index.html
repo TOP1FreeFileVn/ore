@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Quặng</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1288f238-6219-807b-98a1-ccb52fa5ae6e" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="7-ZzUB8qIFezusNZY0Xe5PDx7RRW1nlamyfjnHIzK_S6w-RNm9YRwwdrT6rqgpJTy21a7Ar3NcqkM0hteT0KxoWP471uiKgcbl2CXw.avif"/></div><h1 class="page-title">Quặng</h1><p class="page-description"></p></header><div class="page-body"><hr id="1288f238-6219-80de-8981-d820b1325b00"/><h2 id="1288f238-6219-80c3-bcec-c3a4ab9af06b" class="">Pre-Hardmode</h2><div id="1288f238-6219-8038-9bf6-d14e914e9fdf" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesFile"><path d="M12.5938 8.44043L7.54883 13.4854C6.26367 14.7773 4.54102 14.6475 3.44043 13.54C2.32617 12.4326 2.20312 10.7168 3.49512 9.4248L10.3926 2.52734C11.1445 1.77539 12.2725 1.63867 13.0039 2.37695C13.7422 3.11523 13.6055 4.22949 12.8535 4.98828L6.08594 11.7627C5.77832 12.0703 5.41602 11.9814 5.2041 11.7764C4.99902 11.5576 4.91016 11.2021 5.21777 10.8877L9.93457 6.1709C10.1738 5.93164 10.1875 5.58301 9.96191 5.35059C9.72949 5.13184 9.38086 5.13867 9.1416 5.37793L4.39746 10.1152C3.67285 10.8535 3.7002 11.9746 4.34961 12.624C5.05371 13.3281 6.12012 13.3145 6.8584 12.5762L13.6602 5.77441C14.9795 4.45508 14.9316 2.71875 13.7764 1.55664C12.6416 0.428711 10.8779 0.34668 9.55176 1.66602L2.61328 8.61816C0.883789 10.3477 1 12.8291 2.57227 14.4014C4.14453 15.9668 6.63281 16.0898 8.3623 14.3672L13.4414 9.28809C13.6738 9.0625 13.667 8.64551 13.4346 8.41992C13.209 8.18066 12.833 8.21484 12.5938 8.44043Z"></path></svg></span>Icon</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesFile"><path d="M12.5938 8.44043L7.54883 13.4854C6.26367 14.7773 4.54102 14.6475 3.44043 13.54C2.32617 12.4326 2.20312 10.7168 3.49512 9.4248L10.3926 2.52734C11.1445 1.77539 12.2725 1.63867 13.0039 2.37695C13.7422 3.11523 13.6055 4.22949 12.8535 4.98828L6.08594 11.7627C5.77832 12.0703 5.41602 11.9814 5.2041 11.7764C4.99902 11.5576 4.91016 11.2021 5.21777 10.8877L9.93457 6.1709C10.1738 5.93164 10.1875 5.58301 9.96191 5.35059C9.72949 5.13184 9.38086 5.13867 9.1416 5.37793L4.39746 10.1152C3.67285 10.8535 3.7002 11.9746 4.34961 12.624C5.05371 13.3281 6.12012 13.3145 6.8584 12.5762L13.6602 5.77441C14.9795 4.45508 14.9316 2.71875 13.7764 1.55664C12.6416 0.428711 10.8779 0.34668 9.55176 1.66602L2.61328 8.61816C0.883789 10.3477 1 12.8291 2.57227 14.4014C4.14453 15.9668 6.63281 16.0898 8.3623 14.3672L13.4414 9.28809C13.6738 9.0625 13.667 8.64551 13.4346 8.41992C13.209 8.18066 12.833 8.21484 12.5938 8.44043Z"></path></svg></span>tools reqiured</th></tr></thead><tbody><tr id="643015f2-0e7c-44e6-8bea-6b3796f8ea24"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Copper_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Copper_Ore_(placed).png" alt="Copper_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Copper_Ore.png"><img style="width:20px;max-height:24px" src="Copper_Ore.png" alt="Copper_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Copper-Ore-643015f20e7c44e68bea6b3796f8ea24?pvs=21">Copper Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="4152f334-9275-4a22-8b0a-3a5b4fc84469"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Tin_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Tin_Ore_(placed).png" alt="Tin_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Tin_Ore.png"><img style="width:20px;max-height:24px" src="Tin_Ore.png" alt="Tin_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Tin-Ore-4152f33492754a228b0a3a5b4fc84469?pvs=21">Tin Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="e8a6d483-913b-407a-a743-ae6cd0b7d7dd"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Iron_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Iron_Ore_(placed).png" alt="Iron_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Iron_Ore.png"><img style="width:20px;max-height:24px" src="Iron_Ore.png" alt="Iron_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Iron-Ore-e8a6d483913b407aa743ae6cd0b7d7dd?pvs=21">Iron Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-806c-a8d3-ca0f8291ddaa"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Lead_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Lead_Ore_(placed).png" alt="Lead_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Lead_Ore.png"><img style="width:20px;max-height:24px" src="Lead_Ore.png" alt="Lead_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Lead-Ore-1288f2386219806ca8d3ca0f8291ddaa?pvs=21">Lead Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-801d-ac53-d089143c4f41"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Silver_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Silver_Ore_(placed).png" alt="Silver_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Silver_Ore.png"><img style="width:20px;max-height:24px" src="Silver_Ore.png" alt="Silver_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Silver-Ore-1288f2386219801dac53d089143c4f41?pvs=21">Silver Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-80a3-8dd5-c1ae3bcf18c6"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Tungsten_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Tungsten_Ore_(placed).png" alt="Tungsten_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Tungsten_Ore.png"><img style="width:20px;max-height:24px" src="Tungsten_Ore.png" alt="Tungsten_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Tungsten-Ore-1288f238621980a38dd5c1ae3bcf18c6?pvs=21">Tungsten Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-80a8-8b3b-ff409621f86f"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Gold_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Gold_Ore_(placed).png" alt="Gold_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Gold_Ore.png"><img style="width:20px;max-height:24px" src="Gold_Ore.png" alt="Gold_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Gold-Ore-1288f238621980a88b3bff409621f86f?pvs=21">Gold Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-80ec-a6ff-da68f7cd95d1"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Platinum_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Platinum_Ore_(placed).png" alt="Platinum_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Platinum_Ore.png"><img style="width:20px;max-height:24px" src="Platinum_Ore.png" alt="Platinum_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Platinum-Ore-1288f238621980eca6ffda68f7cd95d1?pvs=21">Platinum Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Cactus_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cactus_Pickaxe.png" alt="Cactus_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tin_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe.png" alt="Copper_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-8050-842f-c1d6bbdb6eed"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Meteorite_(placed).png"><img style="width:20px;max-height:24px" src="Meteorite_(placed).png" alt="Meteorite_(placed).png"/></a></span><span style="margin-right:6px"><a href="Meteorite.png"><img style="width:20px;max-height:24px" src="Meteorite.png" alt="Meteorite.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Meteorite-1288f23862198050842fc1d6bbdb6eed?pvs=21">Meteorite</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Platinum_Pickaxe.png"><img style="width:20px;max-height:24px" src="Platinum_Pickaxe.png" alt="Platinum_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Gold_Pickaxe.png"><img style="width:20px;max-height:24px" src="Gold_Pickaxe.png" alt="Gold_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Tungsten_Pickaxe.png"><img style="width:20px;max-height:24px" src="Tungsten_Pickaxe.png" alt="Tungsten_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-80ba-9576-ebecd07dbc81"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Demonite_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Demonite_Ore_(placed).png" alt="Demonite_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Demonite_Ore.png"><img style="width:20px;max-height:24px" src="Demonite_Ore.png" alt="Demonite_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Demonite-Ore-1288f238621980ba9576ebecd07dbc81?pvs=21">Demonite Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Reaver_Shark.png"><img style="width:20px;max-height:24px" src="Reaver_Shark.png" alt="Reaver_Shark.png"/></a></span><span style="margin-right:6px"><a href="Platinum_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Platinum_Pickaxe%201.png" alt="Platinum_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Gold_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Gold_Pickaxe%201.png" alt="Gold_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-8015-a62c-e2aef36e7e79"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Crimtane_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Crimtane_Ore_(placed).png" alt="Crimtane_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Crimtane_Ore.png"><img style="width:20px;max-height:24px" src="Crimtane_Ore.png" alt="Crimtane_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Crimtane-Ore-1288f23862198015a62ce2aef36e7e79?pvs=21">Crimtane Ore</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Reaver_Shark.png"><img style="width:20px;max-height:24px" src="Reaver_Shark.png" alt="Reaver_Shark.png"/></a></span><span style="margin-right:6px"><a href="Platinum_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Platinum_Pickaxe%201.png" alt="Platinum_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Gold_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Gold_Pickaxe%201.png" alt="Gold_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-80fd-8d69-fe336c00fc47"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Obsidian_(placed).png"><img style="width:20px;max-height:24px" src="Obsidian_(placed).png" alt="Obsidian_(placed).png"/></a></span><span style="margin-right:6px"><a href="Obsidian.png"><img style="width:20px;max-height:24px" src="Obsidian.png" alt="Obsidian.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Obsidian-1288f238621980fd8d69fe336c00fc47?pvs=21">Obsidian</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Reaver_Shark.png"><img style="width:20px;max-height:24px" src="Reaver_Shark.png" alt="Reaver_Shark.png"/></a></span><span style="margin-right:6px"><a href="Platinum_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Platinum_Pickaxe%201.png" alt="Platinum_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Gold_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Gold_Pickaxe%201.png" alt="Gold_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-80bc-91e9-e0b88da4474e"><td class="cell-HBrS"><span style="margin-right:6px"><a href="Hellstone_(placed).png"><img style="width:20px;max-height:24px" src="Hellstone_(placed).png" alt="Hellstone_(placed).png"/></a></span><span style="margin-right:6px"><a href="Hellstone.png"><img style="width:20px;max-height:24px" src="Hellstone.png" alt="Hellstone.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Hellstone-1288f238621980bc91e9e0b88da4474e?pvs=21">Hellstone</a></td><td class="cell-F{{["><span style="margin-right:6px"><a href="Reaver_Shark%201.png"><img style="width:20px;max-height:24px" src="Reaver_Shark%201.png" alt="Reaver_Shark.png"/></a></span><span style="margin-right:6px"><a href="Deathbringer_Pickaxe.png"><img style="width:20px;max-height:24px" src="Deathbringer_Pickaxe.png" alt="Deathbringer_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Nightmare_Pickaxe.png"><img style="width:20px;max-height:24px" src="Nightmare_Pickaxe.png" alt="Nightmare_Pickaxe.png"/></a></span></td></tr></tbody></table><br/><br/></div><hr id="1288f238-6219-800f-87f6-d10a408a89f4"/><h2 id="1288f238-6219-8019-8ad7-d117fc2ab925" class="">Hardmode</h2><div id="1288f238-6219-80f8-b5fd-f779da9d1a46" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesFile"><path d="M12.5938 8.44043L7.54883 13.4854C6.26367 14.7773 4.54102 14.6475 3.44043 13.54C2.32617 12.4326 2.20312 10.7168 3.49512 9.4248L10.3926 2.52734C11.1445 1.77539 12.2725 1.63867 13.0039 2.37695C13.7422 3.11523 13.6055 4.22949 12.8535 4.98828L6.08594 11.7627C5.77832 12.0703 5.41602 11.9814 5.2041 11.7764C4.99902 11.5576 4.91016 11.2021 5.21777 10.8877L9.93457 6.1709C10.1738 5.93164 10.1875 5.58301 9.96191 5.35059C9.72949 5.13184 9.38086 5.13867 9.1416 5.37793L4.39746 10.1152C3.67285 10.8535 3.7002 11.9746 4.34961 12.624C5.05371 13.3281 6.12012 13.3145 6.8584 12.5762L13.6602 5.77441C14.9795 4.45508 14.9316 2.71875 13.7764 1.55664C12.6416 0.428711 10.8779 0.34668 9.55176 1.66602L2.61328 8.61816C0.883789 10.3477 1 12.8291 2.57227 14.4014C4.14453 15.9668 6.63281 16.0898 8.3623 14.3672L13.4414 9.28809C13.6738 9.0625 13.667 8.64551 13.4346 8.41992C13.209 8.18066 12.833 8.21484 12.5938 8.44043Z"></path></svg></span>icon</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesFile"><path d="M12.5938 8.44043L7.54883 13.4854C6.26367 14.7773 4.54102 14.6475 3.44043 13.54C2.32617 12.4326 2.20312 10.7168 3.49512 9.4248L10.3926 2.52734C11.1445 1.77539 12.2725 1.63867 13.0039 2.37695C13.7422 3.11523 13.6055 4.22949 12.8535 4.98828L6.08594 11.7627C5.77832 12.0703 5.41602 11.9814 5.2041 11.7764C4.99902 11.5576 4.91016 11.2021 5.21777 10.8877L9.93457 6.1709C10.1738 5.93164 10.1875 5.58301 9.96191 5.35059C9.72949 5.13184 9.38086 5.13867 9.1416 5.37793L4.39746 10.1152C3.67285 10.8535 3.7002 11.9746 4.34961 12.624C5.05371 13.3281 6.12012 13.3145 6.8584 12.5762L13.6602 5.77441C14.9795 4.45508 14.9316 2.71875 13.7764 1.55664C12.6416 0.428711 10.8779 0.34668 9.55176 1.66602L2.61328 8.61816C0.883789 10.3477 1 12.8291 2.57227 14.4014C4.14453 15.9668 6.63281 16.0898 8.3623 14.3672L13.4414 9.28809C13.6738 9.0625 13.667 8.64551 13.4346 8.41992C13.209 8.18066 12.833 8.21484 12.5938 8.44043Z"></path></svg></span>tools required</th></tr></thead><tbody><tr id="6e1e327d-7d24-4331-9c07-ba1d6fa82a29"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Cobalt_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Cobalt_Ore_(placed).png" alt="Cobalt_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Cobalt_Ore.png"><img style="width:20px;max-height:24px" src="Cobalt_Ore.png" alt="Cobalt_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Cobalt-Ore-6e1e327d7d2443319c07ba1d6fa82a29?pvs=21">Cobalt Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Reaver_Shark%202.png"><img style="width:20px;max-height:24px" src="Reaver_Shark%202.png" alt="Reaver_Shark.png"/></a></span><span style="margin-right:6px"><a href="Molten_Pickaxe.png"><img style="width:20px;max-height:24px" src="Molten_Pickaxe.png" alt="Molten_Pickaxe.png"/></a></span></td></tr><tr id="bca19d85-d0b0-4a7e-8bc7-015678bac2b0"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Palladium_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Palladium_Ore_(placed).png" alt="Palladium_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Palladium_Ore.png"><img style="width:20px;max-height:24px" src="Palladium_Ore.png" alt="Palladium_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Palladium-Ore-bca19d85d0b04a7e8bc7015678bac2b0?pvs=21">Palladium Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Reaver_Shark%202.png"><img style="width:20px;max-height:24px" src="Reaver_Shark%202.png" alt="Reaver_Shark.png"/></a></span><span style="margin-right:6px"><a href="Molten_Pickaxe.png"><img style="width:20px;max-height:24px" src="Molten_Pickaxe.png" alt="Molten_Pickaxe.png"/></a></span></td></tr><tr id="68932520-a698-47b8-b451-09e8132b88d7"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Mythril_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Mythril_Ore_(placed).png" alt="Mythril_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Mythril_Ore.png"><img style="width:20px;max-height:24px" src="Mythril_Ore.png" alt="Mythril_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Mythril-Ore-68932520a69847b8b45109e8132b88d7?pvs=21">Mythril Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Cobalt_Drill.png"><img style="width:20px;max-height:24px" src="Cobalt_Drill.png" alt="Cobalt_Drill.png"/></a></span><span style="margin-right:6px"><a href="Cobalt_Pickaxe.png"><img style="width:20px;max-height:24px" src="Cobalt_Pickaxe.png" alt="Cobalt_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-8005-8543-e89f321c09f5"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Orichalcum_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Orichalcum_Ore_(placed).png" alt="Orichalcum_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Orichalcum_Ore.png"><img style="width:20px;max-height:24px" src="Orichalcum_Ore.png" alt="Orichalcum_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Orichalcum-Ore-1288f238621980058543e89f321c09f5?pvs=21">Orichalcum Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Palladium_Drill.png"><img style="width:20px;max-height:24px" src="Palladium_Drill.png" alt="Palladium_Drill.png"/></a></span><span style="margin-right:6px"><a href="Palladium_Pickaxe.png"><img style="width:20px;max-height:24px" src="Palladium_Pickaxe.png" alt="Palladium_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-8012-a234-f30b8e7b2d2e"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Adamantite_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Adamantite_Ore_(placed).png" alt="Adamantite_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Adamantite_Ore.png"><img style="width:20px;max-height:24px" src="Adamantite_Ore.png" alt="Adamantite_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Adamantite-Ore-1288f23862198012a234f30b8e7b2d2e?pvs=21">Adamantite Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Palladium_Drill%201.png"><img style="width:20px;max-height:24px" src="Palladium_Drill%201.png" alt="Palladium_Drill.png"/></a></span><span style="margin-right:6px"><a href="Palladium_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Palladium_Pickaxe%201.png" alt="Palladium_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Orichalcum_Drill.png"><img style="width:20px;max-height:24px" src="Orichalcum_Drill.png" alt="Orichalcum_Drill.png"/></a></span><span style="margin-right:6px"><a href="Orichalcum_Pickaxe.png"><img style="width:20px;max-height:24px" src="Orichalcum_Pickaxe.png" alt="Orichalcum_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Mythril_Drill.png"><img style="width:20px;max-height:24px" src="Mythril_Drill.png" alt="Mythril_Drill.png"/></a></span><span style="margin-right:6px"><a href="Mythril_Pickaxe.png"><img style="width:20px;max-height:24px" src="Mythril_Pickaxe.png" alt="Mythril_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-808a-8ef4-f721a45790e9"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Titanium_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Titanium_Ore_(placed).png" alt="Titanium_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Titanium_Ore.png"><img style="width:20px;max-height:24px" src="Titanium_Ore.png" alt="Titanium_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Titanium-Ore-1288f2386219808a8ef4f721a45790e9?pvs=21">Titanium Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Palladium_Drill%201.png"><img style="width:20px;max-height:24px" src="Palladium_Drill%201.png" alt="Palladium_Drill.png"/></a></span><span style="margin-right:6px"><a href="Palladium_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Palladium_Pickaxe%201.png" alt="Palladium_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Orichalcum_Drill.png"><img style="width:20px;max-height:24px" src="Orichalcum_Drill.png" alt="Orichalcum_Drill.png"/></a></span><span style="margin-right:6px"><a href="Orichalcum_Pickaxe.png"><img style="width:20px;max-height:24px" src="Orichalcum_Pickaxe.png" alt="Orichalcum_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Mythril_Drill.png"><img style="width:20px;max-height:24px" src="Mythril_Drill.png" alt="Mythril_Drill.png"/></a></span><span style="margin-right:6px"><a href="Mythril_Pickaxe.png"><img style="width:20px;max-height:24px" src="Mythril_Pickaxe.png" alt="Mythril_Pickaxe.png"/></a></span></td></tr><tr id="1288f238-6219-8001-ae7d-e8fb8cfa5c9f"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Chlorophyte_Ore_(placed).png"><img style="width:20px;max-height:24px" src="Chlorophyte_Ore_(placed).png" alt="Chlorophyte_Ore_(placed).png"/></a></span><span style="margin-right:6px"><a href="Chlorophyte_Ore.png"><img style="width:20px;max-height:24px" src="Chlorophyte_Ore.png" alt="Chlorophyte_Ore.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Chlorophyte-Ore-1288f23862198001ae7de8fb8cfa5c9f?pvs=21">Chlorophyte Ore</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Drax.png"><img style="width:20px;max-height:24px" src="Drax.png" alt="Drax.png"/></a></span><span style="margin-right:6px"><a href="Pickaxe_Axe.png"><img style="width:20px;max-height:24px" src="Pickaxe_Axe.png" alt="Pickaxe_Axe.png"/></a></span></td></tr><tr id="1288f238-6219-805c-af2b-ffb912089218"><td class="cell-A;MX"><span style="margin-right:6px"><a href="Luminite_(placed).png"><img style="width:20px;max-height:24px" src="Luminite_(placed).png" alt="Luminite_(placed).png"/></a></span><span style="margin-right:6px"><a href="Luminite.png"><img style="width:20px;max-height:24px" src="Luminite.png" alt="Luminite.png"/></a></span></td><td class="cell-title"><a href="https://www.notion.so/Luminite-1288f2386219805caf2bffb912089218?pvs=21">Luminite</a></td><td class="cell-[Us~"><span style="margin-right:6px"><a href="Tin_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Tin_Pickaxe%201.png" alt="Tin_Pickaxe.png"/></a></span><span style="margin-right:6px"><a href="Copper_Pickaxe%201.png"><img style="width:20px;max-height:24px" src="Copper_Pickaxe%201.png" alt="Copper_Pickaxe.png"/></a></span></td></tr></tbody></table><br/><br/></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
